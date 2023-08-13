@@ -1,16 +1,12 @@
 mod r#macro;
 
 use hello_macro::HelloMacro;
+use hello_macro_derive::HelloMacro;
 
 use std::collections::HashSet;
 
+#[derive(HelloMacro)]
 struct Pancakes;
-
-impl HelloMacro for Pancakes {
-    fn hello_macro() {
-        println!("Hello, Macro! My name is Pancake");
-    }
-}
 
 fn main() {
     let set = set![1, 2, 4, 5];
